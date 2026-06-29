@@ -7,9 +7,13 @@ class OnboardingPage extends StatefulWidget {
 
   @override
   State<OnboardingPage> createState() => _OnboardingPageState();
+  State<OnboardingPage> createState() =>
+      _OnboardingPageState();
 }
 
 class _OnboardingPageState extends State<OnboardingPage> {
+class _OnboardingPageState
+    extends State<OnboardingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -148,6 +152,9 @@ class _OnboardingPageState extends State<OnboardingPage> {
             ? const Color(0xff0B4A3A)
             : Colors.grey.shade400,
         borderRadius: BorderRadius.circular(20),
+    return const Scaffold(
+      body: Center(
+        child: Text("Onboarding Page"),
       ),
     );
   }
