@@ -1,11 +1,22 @@
 import 'package:flutter/material.dart';
 import '../../../../app/routes/routes_names.dart';
+import '../../../../core/Models/order_model.dart';
 import '../widgets/summary_item.dart';
 
 
 class OrderSummaryPage extends StatelessWidget {
 
-  const OrderSummaryPage({super.key});
+
+  final OrderSummaryModel order;
+
+
+  const OrderSummaryPage({
+
+    super.key,
+
+    required this.order,
+
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -81,34 +92,62 @@ class OrderSummaryPage extends StatelessWidget {
                   child: Column(
             
                     children: [
+                      // summaryItem(
+                      //   Icons.pets,
+                      //   "Animal",
+                      //   "Goat",
+                      // ),
                       summaryItem(
                         Icons.pets,
                         "Animal",
-                        "Goat",
+                        order.animal,
                       ),
             
+                      // summaryItem(
+                      //   Icons.calendar_month,
+                      //   "Date",
+                      //   "10 Dhul-Hijjah 1446\n(Eid Day)",
+                      // ),
+
                       summaryItem(
                         Icons.calendar_month,
                         "Date",
-                        "10 Dhul-Hijjah 1446\n(Eid Day)",
+                        order.date,
                       ),
             
+                      // summaryItem(
+                      //   Icons.access_time,
+                      //   "Time Slot",
+                      //   "06:00 AM - 08:00 AM",
+                      // ),
                       summaryItem(
                         Icons.access_time,
                         "Time Slot",
-                        "06:00 AM - 08:00 AM",
+                        order.timeSlot,
                       ),
             
+                      // summaryItem(
+                      //   Icons.person,
+                      //   "Vendor",
+                      //   "Al Noor Slaughterhouse\nAziziyah, Makkah",
+                      // ),
+
                       summaryItem(
                         Icons.person,
                         "Vendor",
-                        "Al Noor Slaughterhouse\nAziziyah, Makkah",
+                        order.vendor,
                       ),
-            
+
+                      // summaryItem(
+                      //   Icons.shopping_cart,
+                      //   "Quantity",
+                      //   "1 Animal",
+                      // ),
+
                       summaryItem(
                         Icons.shopping_cart,
                         "Quantity",
-                        "1 Animal",
+                        order.quantity,
                       ),
             
                       summaryItem(
@@ -156,8 +195,8 @@ class OrderSummaryPage extends StatelessWidget {
                     mainAxisAlignment:
                     MainAxisAlignment.spaceBetween,
             
-                    children: const [
-                      Text("Total Payable",
+                    children: [
+                      const Text("Total Payable",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
@@ -169,9 +208,10 @@ class OrderSummaryPage extends StatelessWidget {
             
                       Text(
             
-                        "SAR 650",
-            
-                        style: TextStyle(
+                        // "SAR 650",
+
+                        "SAR ${order.amount}",
+                        style: const TextStyle(
             
                           fontWeight: FontWeight.bold,
             

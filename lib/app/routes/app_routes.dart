@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quarbani_user_app/app/routes/routes_names.dart';
 import '../../core/Models/animal_model.dart';
+import '../../core/Models/order_model.dart';
+import '../../core/Models/payment_success_model.dart';
 import '../../features/AI_Chat/Bloc/ai_chat_bloc.dart';
 import '../../features/AI_Chat/View/ai_chat_page.dart';
 import '../../features/Demo/presentation/pages/demo_home_page.dart';
@@ -49,10 +51,36 @@ class AppRouter {
 
         );
 
-      case RouteNames.orderSummary:
-          return MaterialPageRoute(
+      // case RouteNames.orderSummary:
+      //     return MaterialPageRoute(
+      //
+      //     builder:(_) => OrderSummaryPage(),
+      //
+      //   );
 
-          builder:(_) => OrderSummaryPage(),
+      case RouteNames.orderSummary:
+
+        return MaterialPageRoute(
+
+          builder:(_) => OrderSummaryPage(
+
+            order: OrderSummaryModel(
+
+              animal: "Goat",
+
+              date: "10 Dhul-Hijjah 1446\n(Eid Day)",
+
+              timeSlot: "06:00 AM - 08:00 AM",
+
+              vendor: "Al Noor Slaughterhouse\nAziziyah, Makkah",
+
+              quantity: "1 Animal",
+
+              amount: 650,
+
+            ),
+
+          ),
 
         );
 
@@ -70,12 +98,34 @@ class AppRouter {
           builder: (_) => const DemoHomePage(),
 
         );
+      //
+      // case RouteNames.paymentSuccess:
+      //
+      //   return MaterialPageRoute(
+      //
+      //     builder: (_) => const PaymentSuccessPage(),
+      //
+      //   );
 
       case RouteNames.paymentSuccess:
 
         return MaterialPageRoute(
 
-          builder: (_) => const PaymentSuccessPage(),
+          builder: (_) => PaymentSuccessPage(
+
+            payment: PaymentSuccessModel(
+
+              orderId: "QB-2024-0001258",
+
+              amount: 650,
+
+              status: "success",
+
+              message: "Payment Successful",
+
+            ),
+
+          ),
 
         );
 

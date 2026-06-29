@@ -1,13 +1,22 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/Models/payment_success_model.dart';
+
 
 class PaymentSuccessPage extends StatelessWidget {
 
-  const PaymentSuccessPage({super.key});
+  final PaymentSuccessModel payment;
+
+  const PaymentSuccessPage({
+    super.key,
+    required this.payment,
+  });
 
 
   @override
   Widget build(BuildContext context) {
+
+    final paymentData=payment;
 
     return Scaffold(
 
@@ -102,9 +111,9 @@ class PaymentSuccessPage extends StatelessWidget {
                       MainAxisAlignment.spaceBetween,
 
 
-                      children: const [
+                      children: [
 
-                        Text(
+                        const Text(
                           "Order ID",
                           style: TextStyle(
                             fontSize: 15,
@@ -115,9 +124,9 @@ class PaymentSuccessPage extends StatelessWidget {
 
                         Text(
 
-                          "QB-2024-0001258",
-
-                          style: const TextStyle(
+                          // "QB-2024-0001258",
+                          payment.orderId,
+                          style:const TextStyle(
 
                             fontSize:18,
 
@@ -143,8 +152,8 @@ class PaymentSuccessPage extends StatelessWidget {
                       mainAxisAlignment:
                       MainAxisAlignment.spaceBetween,
 
-                      children: const [
-                        Text(
+                      children: [
+                        const Text(
                           "Amount Paid",
                           style: TextStyle(
                             fontSize: 15,
@@ -154,8 +163,8 @@ class PaymentSuccessPage extends StatelessWidget {
 
                         Text(
 
-                          "SAR 650",
-
+                          // "SAR 650",
+                          "SAR ${paymentData.amount}",
                           style: const TextStyle(
 
                             fontSize:18,

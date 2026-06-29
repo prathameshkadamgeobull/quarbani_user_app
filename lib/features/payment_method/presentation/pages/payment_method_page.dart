@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../../app/routes/routes_names.dart';
+import '../../../../core/Models/payment_model.dart';
 import '../widgets/payment_option_tile.dart';
 
 
@@ -14,6 +15,36 @@ class PaymentMethodPage extends StatefulWidget {
    }
 class _PaymentMethodPageState extends State<PaymentMethodPage> {
   bool isChecked = false;
+
+
+  final List<PaymentMethodModel> paymentMethods = [
+
+    PaymentMethodModel(
+      name: "Apple Pay",
+      image: "assets/images/apple.jpg",
+    ),
+
+    PaymentMethodModel(
+      name: "mada",
+      image: "assets/images/mada.jpg",
+    ),
+
+    PaymentMethodModel(
+      name: "STC Pay",
+      image: "assets/images/stc.jpg",
+    ),
+
+    PaymentMethodModel(
+      name: "PayPal",
+      image: "assets/images/Paypal.jpg",
+    ),
+
+    PaymentMethodModel(
+      name: "Bank Transfer",
+      image: "assets/images/banktransfer.jpg",
+    ),
+
+  ];
 
 
   @override
@@ -198,27 +229,43 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
                 ),
 
 
-                const SizedBox(height:12),
-                paymentOption(
-                  "Apple Pay",
-                  "assets/images/apple.jpg",
-                ),
-                paymentOption(
-                  "mada",
-                  "assets/images/mada.jpg",
-                ),
-                paymentOption(
-                  "STC Pay",
-                  "assets/images/stc.jpg",
-                ),
+                // const SizedBox(height:12),
+                // paymentOption(
+                //   "Apple Pay",
+                //   "assets/images/apple.jpg",
+                // ),
+                // paymentOption(
+                //   "mada",
+                //   "assets/images/mada.jpg",
+                // ),
+                // paymentOption(
+                //   "STC Pay",
+                //   "assets/images/stc.jpg",
+                // ),
+                //
+                // paymentOption(
+                //   "PayPal",
+                //   "assets/images/Paypal.jpg",
+                // ),
+                // paymentOption(
+                //   "Bank Transfer",
+                //   "assets/images/banktransfer.jpg",
+                // ),
 
-                paymentOption(
-                  "PayPal",
-                  "assets/images/Paypal.jpg",
-                ),
-                paymentOption(
-                  "Bank Transfer",
-                  "assets/images/banktransfer.jpg",
+                ...paymentMethods.map(
+
+                      (payment) {
+
+                    return paymentOption(
+
+                      payment.name,
+
+                      payment.image,
+
+                    );
+
+                  },
+
                 ),
                 const SizedBox(height: 40,),
 
