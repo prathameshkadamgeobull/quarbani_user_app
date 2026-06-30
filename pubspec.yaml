@@ -74,6 +74,9 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/icons/
+    - assets/svg/
+    - assets/logo/
 #    - assets/icons/
 #    - assets/svg/
     - assets/logo/qurbani_logo.png

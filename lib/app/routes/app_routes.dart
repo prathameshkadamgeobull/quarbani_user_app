@@ -9,6 +9,7 @@ import '../../features/AI_Chat/View/ai_chat_page.dart';
 import '../../features/Demo/presentation/pages/demo_home_page.dart';
 import '../../features/animal_selection/Presentation/Pages/animal_details_page.dart';
 import '../../features/animal_selection/Presentation/Pages/animal_selection_page.dart';
+import '../../features/dashboard/presentation/pages/dashboard_page.dart';
 import '../../features/onboarding/presentation/pages/onboarding_page.dart';
 import '../../features/order_summary/presentation/pages/order_summary_page.dart';
 import '../../features/payment_method/presentation/pages/payment_method_page.dart';
@@ -60,7 +61,9 @@ class AppRouter {
 
       case RouteNames.orderSummary:
 
+      case RouteNames.dashboard:
         return MaterialPageRoute(
+          builder: (_) => const DashboardPage(),
 
           builder:(_) => OrderSummaryPage(
 
