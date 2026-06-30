@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/Models/animal_model.dart';
+import '../../../../core/constants/theme/app_colors.dart';
+import '../../../../core/constants/theme/app_text_styles.dart';
 import '../Widgets/detail_info_card.dart';
 
 
@@ -18,12 +20,12 @@ class AnimalDetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
 
-      backgroundColor:Colors.white,
+      backgroundColor: AppColors.white,
 
 
       appBar: AppBar(
 
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.white,
 
         elevation: 0,
 
@@ -40,7 +42,7 @@ class AnimalDetailsPage extends StatelessWidget {
 
           icon: const Icon(
             Icons.arrow_back_ios_new,
-            color: Colors.black,
+            color: AppColors.black,
             size: 18,
           ),
         ),
@@ -86,10 +88,11 @@ class AnimalDetailsPage extends StatelessWidget {
 
                  Text(
                   animal.name,
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
+                   style: AppTextStyles.title.copyWith(
+                     fontSize: 20,
+                     fontWeight: FontWeight.bold,
+                     color: AppColors.black,
+                   ),
                 ),
 
 
@@ -98,11 +101,10 @@ class AnimalDetailsPage extends StatelessWidget {
 
                 Text(
                   animal.price,
-                  style: TextStyle(
+                  style: AppTextStyles.body.copyWith(
                     fontSize: 15,
-                    fontWeight:FontWeight.w600,
-                    color: Color(0xff000000),
-
+                    fontWeight: FontWeight.w600,
+                    color: AppColors.black,
                   ),
                 ),
 
@@ -112,7 +114,7 @@ class AnimalDetailsPage extends StatelessWidget {
 
                 Container(
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: AppColors.white,
 
                     borderRadius: BorderRadius.circular(12),
 
@@ -132,34 +134,7 @@ class AnimalDetailsPage extends StatelessWidget {
 
                     ],
                   ),
-                  // child: Row(
-                  //
-                  //   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  //
-                  //   children: [
-                  //
-                  //     DetailInfoCard(
-                  //       icon: Icons.person_outline,
-                  //       title: "Age",
-                  //       value: "1-2 Years",
-                  //     ),
-                  //
-                  //
-                  //     DetailInfoCard(
-                  //       icon: Icons.monitor_weight_outlined,
-                  //       title: "Weight",
-                  //       value: "20-30 Kg",
-                  //     ),
-                  //
-                  //
-                  //     DetailInfoCard(
-                  //       icon: Icons.pets,
-                  //       title: "Type" ,
-                  //       value: "Local",
-                  //     ),
-                  //
-                  //   ],
-                  // ),
+
 
                     child: Row(
 

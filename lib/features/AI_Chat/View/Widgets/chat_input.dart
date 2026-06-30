@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../core/constants/theme/app_colors.dart';
+import '../../../../core/constants/theme/app_text_styles.dart';
 import '../../Bloc/ai_chat_bloc.dart';
 import '../../Bloc/ai_chat_event.dart';
 
@@ -53,7 +55,7 @@ class _ChatInputState extends State<ChatInput> {
 
         decoration: BoxDecoration(
 
-          color: Colors.white,
+          color: AppColors.white,
 
           boxShadow: [
             BoxShadow(
@@ -74,13 +76,13 @@ class _ChatInputState extends State<ChatInput> {
 
                 decoration: BoxDecoration(
 
-                  color: Colors.white,
+                  color: AppColors.white,
 
                   borderRadius:
                   BorderRadius.circular(30),
 
                   border: Border.all(
-                    color: Colors.grey.shade300,
+                    color: AppColors.greyBorder,
                   ),
 
                 ),
@@ -105,17 +107,14 @@ class _ChatInputState extends State<ChatInput> {
                     hintText:
                     "Type or speak...",
 
-
-                    hintStyle:
-                    TextStyle(
-                      color: Colors.grey.shade500,
-                      fontSize: 15,
+                    hintStyle: AppTextStyles.body.copyWith(
+                      color: AppColors.grey,
                     ),
 
 
                     prefixIcon: Icon(
                       Icons.mic_none_rounded,
-                      color: Colors.grey.shade600,
+                        color: AppColors.grey,
                     ),
 
 
@@ -149,10 +148,9 @@ class _ChatInputState extends State<ChatInput> {
                 height: 45,
                 width: 45,
 
-
                 decoration: const BoxDecoration(
 
-                  color: Color(0xff0F6B43),
+                  color: AppColors.green,
 
                   shape: BoxShape.circle,
 
@@ -163,7 +161,7 @@ class _ChatInputState extends State<ChatInput> {
 
                   Icons.send_rounded,
 
-                  color: Colors.white,
+                  color: AppColors.white,
 
                   size: 24,
 

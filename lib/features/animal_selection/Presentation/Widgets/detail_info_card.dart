@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/constants/theme/app_colors.dart';
+import '../../../../core/constants/theme/app_text_styles.dart';
 
 class DetailInfoCard extends StatelessWidget {
 
@@ -7,76 +9,44 @@ class DetailInfoCard extends StatelessWidget {
   final String title;
   final String value;
 
-
   const DetailInfoCard({
-
     super.key,
-
     required this.icon,
-
     required this.title,
-
     required this.value,
-
   });
-
 
   @override
   Widget build(BuildContext context) {
-
 
     return Column(
 
       children: [
 
-
         Icon(
-
           icon,
-
-          color: Color(0xff0F6B43),
-
-          size:24,
-
+          color: AppColors.successGreen,
+          size: 24,
         ),
 
-
-        const SizedBox(height:6),
-
+        const SizedBox(height: 6),
 
         Text(
           title,
-          style: const TextStyle(
-            fontSize:13,
-            fontWeight: FontWeight.w600,
-            // color:Colors.black87,
-            color: Color(0xff000000),
-
+          style: AppTextStyles.label.copyWith(
+            color: AppColors.black,
           ),
-
         ),
-
 
         Text(
           value,
-
-          style: const TextStyle(
-
-            fontSize:13,
-            color: Color(0xff000000),
-
-            fontWeight:FontWeight.w600,
-
+          style: AppTextStyles.body.copyWith(
+            color: AppColors.black,
+            fontWeight: FontWeight.w600,
           ),
-
         ),
 
-
       ],
-
-
     );
-
   }
-
 }

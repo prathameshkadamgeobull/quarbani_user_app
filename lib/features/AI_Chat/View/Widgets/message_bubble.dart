@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/Models/chat_message.dart';
+import '../../../../core/constants/theme/app_colors.dart';
+import '../../../../core/constants/theme/app_text_styles.dart';
 
 
 class MessageBubble extends StatelessWidget {
@@ -76,9 +78,9 @@ class MessageBubble extends StatelessWidget {
 
                     color: message.isUser
 
-                        ? const Color(0xff086B45)
+                        ? AppColors.green
 
-                        : Colors.white,
+                        : AppColors.white,
 
 
 
@@ -109,7 +111,7 @@ class MessageBubble extends StatelessWidget {
 
                         : Border.all(
 
-                      color: Colors.grey.shade200,
+                      color: AppColors.greyBorder,
 
                     ),
 
@@ -120,23 +122,12 @@ class MessageBubble extends StatelessWidget {
 
 
                   child: Text(
-
                     message.message,
-
-
-                    style: TextStyle(
-
-                      fontSize:14,
-
-                      height:1.5,
-
-
+                    style: AppTextStyles.body.copyWith(
                       color: message.isUser
-
-                          ? Colors.white
-
-                          : Colors.black87,
-
+                          ? AppColors.white
+                          : AppColors.black,
+                      height: 1.5,
                     ),
 
 
@@ -149,9 +140,9 @@ class MessageBubble extends StatelessWidget {
 
                 Text(
                   "10:30 AM",
-                  style: TextStyle(
+                  style: AppTextStyles.body.copyWith(
                     fontSize: 12,
-                    color: Colors.grey.shade500,
+                    color: AppColors.grey,
                   ),
                 ),
               ],
