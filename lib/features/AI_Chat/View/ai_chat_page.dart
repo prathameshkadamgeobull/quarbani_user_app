@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../core/constants/theme/app_colors.dart';
+import '../../../core/constants/theme/app_text_styles.dart';
 import '../Bloc/ai_chat_bloc.dart';
 import '../Bloc/ai_chat_state.dart';
 import 'Widgets/assistant_header.dart';
@@ -77,11 +79,11 @@ class _AiChatViewState extends State<_AiChatView> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-    backgroundColor: Colors.white,
+      backgroundColor: AppColors.white,
 
       appBar: AppBar(
         toolbarHeight: 40,
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.white,
         elevation: 0,
         centerTitle: true,
 
@@ -89,17 +91,17 @@ class _AiChatViewState extends State<_AiChatView> {
           onPressed: () => Navigator.pop(context),
           icon: const Icon(
             Icons.arrow_back_ios_new,
-            color: Colors.black,
+            color: AppColors.black,
             size: 20,
           ),
         ),
 
-        title: const Text(
+        title:  Text(
           "Qurbani AI Assistant",
-          style: TextStyle(
-            color: Colors.black,
+          style: AppTextStyles.title.copyWith(
             fontSize: 18,
             fontWeight: FontWeight.w800,
+            color: AppColors.black,
           ),
         ),
       ),
@@ -143,7 +145,7 @@ class _AiChatViewState extends State<_AiChatView> {
 
                             style: TextStyle(
 
-                              color: Colors.grey,
+                              color: AppColors.grey,
 
                               fontSize:13,
 

@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import '../../../../core/Models/animal_model.dart';
 
 
+import '../../../../core/constants/theme/app_colors.dart';
+import '../../../../core/constants/theme/app_text_styles.dart';
 import '../Widgets/animal_card.dart';
 import '../Widgets/detail_info_card.dart';
 
@@ -215,12 +217,12 @@ class _AnimalSelectionPageState extends State<AnimalSelectionPage> {
 
     return Scaffold(
 
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.white,
 
 
       appBar: AppBar(
 
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.white,
 
         elevation: 0,
 
@@ -229,15 +231,8 @@ class _AnimalSelectionPageState extends State<AnimalSelectionPage> {
 
           "Select Animal",
 
-          style: TextStyle(
+            style: AppTextStyles.title,
 
-            color: Colors.black,
-
-            fontSize: 18,
-
-            fontWeight: FontWeight.w700,
-
-          ),
 
         ),
 
@@ -395,13 +390,7 @@ class AnimalDetailsSection extends StatelessWidget {
 
             animal.name,
 
-            style: const TextStyle(
-
-              fontSize:20,
-
-              fontWeight:FontWeight.bold,
-
-            ),
+            style: AppTextStyles.title,
 
           ),
 
@@ -413,15 +402,7 @@ class AnimalDetailsSection extends StatelessWidget {
 
             animal.price,
 
-            style: const TextStyle(
-
-              fontSize: 15,
-
-              fontWeight: FontWeight.w600,
-
-              color: Color(0xff000000),
-
-            ),
+            style: AppTextStyles.smallTitle,
 
           ),
 
@@ -519,16 +500,7 @@ class AnimalDetailsSection extends StatelessWidget {
           const Text(
 
             "Includes",
-
-            style: TextStyle(
-
-              fontSize: 16,
-
-              fontWeight: FontWeight.bold,
-
-              color: Color(0xff000000),
-
-            ),
+            style: AppTextStyles.smallTitle,
 
           ),
 
@@ -567,7 +539,7 @@ class AnimalDetailsSection extends StatelessWidget {
 
             Icons.check_circle,
 
-            color: Color(0xff0F6B43),
+            color: AppColors.successGreen,
 
             size: 15,
 
@@ -581,14 +553,9 @@ class AnimalDetailsSection extends StatelessWidget {
 
             text,
 
-            style: const TextStyle(
-
-              color: Color(0xff000000),
-
-              fontSize: 14,
-
-              fontWeight: FontWeight.w700,
-
+            style: AppTextStyles.body.copyWith(
+              color: AppColors.black,
+              fontWeight: FontWeight.w600,
             ),
 
           ),

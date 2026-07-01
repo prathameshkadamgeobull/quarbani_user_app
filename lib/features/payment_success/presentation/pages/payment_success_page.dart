@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/Models/payment_success_model.dart';
+import '../../../../core/constants/theme/app_colors.dart';
+import '../../../../core/constants/theme/app_text_styles.dart';
 
 
 class PaymentSuccessPage extends StatelessWidget {
@@ -20,7 +22,7 @@ class PaymentSuccessPage extends StatelessWidget {
 
     return Scaffold(
 
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.white,
 
       body: SafeArea(
         child: Padding(
@@ -43,25 +45,22 @@ class PaymentSuccessPage extends StatelessWidget {
 
                   shape: BoxShape.circle,
 
-                  color: Color(0xff004D2C),
+                  color: AppColors.successGreen,
 
                 ),
 
                 child: const Icon(
                   Icons.check,
-                  color: Colors.white,
+                  color: AppColors.white,
                   size:55,
                 ),
               ),
 
               const SizedBox(height:25),
 
-              const Text(
+               Text(
                 "Payment Successful!",
-                style: TextStyle(
-                  fontSize:22,
-                  fontWeight:FontWeight.w900,
-                ),
+                  style: AppTextStyles.heading,
               ),
 
               const SizedBox(height:15),
@@ -71,14 +70,7 @@ class PaymentSuccessPage extends StatelessWidget {
                 "Your Quarbani order has been\nplaced successfully.",
 
                 textAlign: TextAlign.center,
-
-                style: TextStyle(
-
-                  fontSize:15,
-
-                  fontWeight:FontWeight.w900,
-
-                ),
+                style: AppTextStyles.body,
 
               ),
               const SizedBox(height:30),
@@ -93,7 +85,7 @@ class PaymentSuccessPage extends StatelessWidget {
 
                   border: Border.all(
 
-                    color: Colors.grey.shade300,
+                    color: AppColors.greyBorder,
 
                   ),
 
@@ -103,22 +95,14 @@ class PaymentSuccessPage extends StatelessWidget {
                 child: Column(
 
                   children: [
-
-
                     Row(
-
                       mainAxisAlignment:
                       MainAxisAlignment.spaceBetween,
-
-
                       children: [
 
                         const Text(
                           "Order ID",
-                          style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w800,
-                          ),
+                          style: AppTextStyles.smallTitle,
                         ),
 
 
@@ -126,17 +110,7 @@ class PaymentSuccessPage extends StatelessWidget {
 
                           // "QB-2024-0001258",
                           payment.orderId,
-                          style:const TextStyle(
-
-                            fontSize:18,
-
-                            fontWeight: FontWeight.w900,
-
-                            color: Colors.black,
-
-                            fontFamily: "Roboto",
-
-                          ),
+                          style: AppTextStyles.amount,
                         ),
 
 
@@ -155,27 +129,14 @@ class PaymentSuccessPage extends StatelessWidget {
                       children: [
                         const Text(
                           "Amount Paid",
-                          style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w800
-                          ),
+                          style: AppTextStyles.smallTitle,
                         ),
 
                         Text(
 
                           // "SAR 650",
                           "SAR ${paymentData.amount}",
-                          style: const TextStyle(
-
-                            fontSize:18,
-
-                            fontWeight: FontWeight.w900,
-
-                            color: Colors.black,
-
-                            fontFamily: "Roboto",
-
-                          ),
+                          style: AppTextStyles.amount,
 
                         ),
 
@@ -191,13 +152,10 @@ class PaymentSuccessPage extends StatelessWidget {
 
               const SizedBox(height:30),
 
-              const Text(
+              Text(
                 "A confirmation has been sent to\nyour email and WhatsApp.",
                 textAlign: TextAlign.center,
-                style:TextStyle(
-                  fontSize:19,
-                  fontWeight:FontWeight.w800,
-                ),
+                style: AppTextStyles.successMessage,
               ),
 
               // const Spacer(),
@@ -212,8 +170,7 @@ class PaymentSuccessPage extends StatelessWidget {
 
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor:
-                    const Color(0xff004D2C),
+                    backgroundColor: AppColors.green,
                     shape: RoundedRectangleBorder(
                       borderRadius:
                       BorderRadius.circular(10),
@@ -224,10 +181,8 @@ class PaymentSuccessPage extends StatelessWidget {
                   onPressed:(){},
                   child: const Text(
                     "View My Order",
-                    style: TextStyle(
-                      color:Colors.white,
-                      fontWeight:FontWeight.bold,
-                    ),
+                    style: AppTextStyles.button,
+
                   ),
                 ),
               ),
@@ -237,12 +192,9 @@ class PaymentSuccessPage extends StatelessWidget {
               TextButton(
 
                 onPressed:(){},
-                child: const Text(
+                child: Text(
                   "Back to Home",
-                  style: TextStyle(
-                    color:Color(0xff004D2C),
-                    fontWeight:FontWeight.bold,
-                  ),
+                  style: AppTextStyles.link,
                 ),
 
               ),

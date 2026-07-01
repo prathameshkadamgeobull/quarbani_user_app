@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:quarbani_user_app/core/constants/theme/app_colors.dart';
 import '../../../../app/routes/routes_names.dart';
 import '../../../../core/Models/order_model.dart';
+import '../../../../core/constants/theme/app_text_styles.dart';
 import '../widgets/summary_item.dart';
 
 
@@ -22,7 +24,7 @@ class OrderSummaryPage extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.white,
       body:SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(
@@ -33,34 +35,17 @@ class OrderSummaryPage extends StatelessWidget {
               children: [
                 const SizedBox(height: 15),
                 // HEADER
-                const Text(
+                Text(
             
                   "Order Summary",
-            
-                  style: TextStyle(
-            
-                    fontSize: 28,
-            
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xff000000),
-            
-            
-                  ),
-            
+                  style: AppTextStyles.heading,
+
                 ),
 
                 const SizedBox(height: 3),
-                const Text(
+                 Text(
                   "Review your Qurbani details",
-                  style: TextStyle(
-            
-                    fontSize: 18,
-                    fontWeight: FontWeight.w700,
-            
-                    color: Color(0xff111111),
-            
-            
-                  ),
+                  style: AppTextStyles.body,
             
                 ),
             
@@ -76,13 +61,13 @@ class OrderSummaryPage extends StatelessWidget {
                   padding: const EdgeInsets.fromLTRB(18, 18, 18, 5,
                   ),
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: AppColors.white,
                     borderRadius:
                     BorderRadius.circular(18),
             
                     border: Border.all(
-            
-                      color: Colors.grey.shade300,
+
+                      color: AppColors.greyBorder,
             
                     ),
                   ),
@@ -92,57 +77,29 @@ class OrderSummaryPage extends StatelessWidget {
                   child: Column(
             
                     children: [
-                      // summaryItem(
-                      //   Icons.pets,
-                      //   "Animal",
-                      //   "Goat",
-                      // ),
                       summaryItem(
                         Icons.pets,
                         "Animal",
                         order.animal,
                       ),
-            
-                      // summaryItem(
-                      //   Icons.calendar_month,
-                      //   "Date",
-                      //   "10 Dhul-Hijjah 1446\n(Eid Day)",
-                      // ),
 
                       summaryItem(
                         Icons.calendar_month,
                         "Date",
                         order.date,
                       ),
-            
-                      // summaryItem(
-                      //   Icons.access_time,
-                      //   "Time Slot",
-                      //   "06:00 AM - 08:00 AM",
-                      // ),
+
                       summaryItem(
                         Icons.access_time,
                         "Time Slot",
                         order.timeSlot,
                       ),
-            
-                      // summaryItem(
-                      //   Icons.person,
-                      //   "Vendor",
-                      //   "Al Noor Slaughterhouse\nAziziyah, Makkah",
-                      // ),
 
                       summaryItem(
                         Icons.person,
                         "Vendor",
                         order.vendor,
                       ),
-
-                      // summaryItem(
-                      //   Icons.shopping_cart,
-                      //   "Quantity",
-                      //   "1 Animal",
-                      // ),
 
                       summaryItem(
                         Icons.shopping_cart,
@@ -182,8 +139,8 @@ class OrderSummaryPage extends StatelessWidget {
             
             
                     border: Border.all(
-            
-                      color: Colors.grey.shade300,
+
+                      color: AppColors.greyBorder,
             
                     ),
             
@@ -197,27 +154,15 @@ class OrderSummaryPage extends StatelessWidget {
             
                     children: [
                       const Text("Total Payable",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                          color: Color(0xff000000),
-                      ),
+                        style: AppTextStyles.smallTitle,
             
                       ),
             
             
                       Text(
-            
-                        // "SAR 650",
 
                         "SAR ${order.amount}",
-                        style: const TextStyle(
-            
-                          fontWeight: FontWeight.bold,
-            
-                          fontSize: 20,
-            
-                        ),
+                        style: AppTextStyles.amount,
             
                       ),
             
@@ -234,8 +179,8 @@ class OrderSummaryPage extends StatelessWidget {
                   height: 45,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      // backgroundColor: Color(0xff006B3F),
-                      backgroundColor: const Color(0xff004D2C),
+                      backgroundColor: AppColors.green,
+                      textStyle: AppTextStyles.title,
             
                       shape:
                       RoundedRectangleBorder(
@@ -253,18 +198,16 @@ class OrderSummaryPage extends StatelessWidget {
                     },
             
             
-                    child: const Text(
+                    child: Text(
             
                       "Proceed to Payment",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 17,
+                      style: AppTextStyles.button,
             
                       ),
                     ),
             
                   ),
-                ),
+
             
                 const SizedBox(height: 15),
             

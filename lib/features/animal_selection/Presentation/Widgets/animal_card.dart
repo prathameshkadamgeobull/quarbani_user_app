@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../../app/routes/routes_names.dart';
 import '../../../../core/Models/animal_model.dart';
+import '../../../../core/constants/theme/app_colors.dart';
+import '../../../../core/constants/theme/app_text_styles.dart';
 import '../Pages/animal_details_page.dart';
 
 
@@ -77,7 +79,7 @@ class AnimalCard extends StatelessWidget {
 
         border: Border.all(
 
-          color:Colors.grey.shade300,
+          color: AppColors.greyBorder,
 
         ),
 
@@ -132,13 +134,7 @@ class AnimalCard extends StatelessWidget {
 
                   animal.name,
 
-                  style:const TextStyle(
-
-                    fontSize:15,
-
-                    fontWeight:FontWeight.w600,
-
-                  ),
+                  style: AppTextStyles.smallTitle,
 
                 ),
 
@@ -146,13 +142,7 @@ class AnimalCard extends StatelessWidget {
 
                   animal.price,
 
-                  style:TextStyle(
-
-                    fontSize:15,
-
-                    color:Colors.grey.shade600,
-
-                  ),
+                  style: AppTextStyles.body,
 
                 ),
 
@@ -169,7 +159,7 @@ class AnimalCard extends StatelessWidget {
                 : Icons.keyboard_arrow_down,
 
             size:40,
-
+            color: AppColors.black,
           ),
 
 

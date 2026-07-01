@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/constants/theme/app_colors.dart';
+import '../../../../core/constants/theme/app_text_styles.dart';
+
 class AssistantHeader extends StatelessWidget {
 
   const AssistantHeader({super.key});
@@ -35,11 +38,7 @@ class AssistantHeader extends StatelessWidget {
 
             const Text(
               "Online",
-              style: TextStyle(
-                color: Colors.green,
-                fontSize: 14,
-                fontWeight: FontWeight.bold,
-              ),
+              style: AppTextStyles.link,
             ),
 
           ],
@@ -60,7 +59,7 @@ class AssistantHeader extends StatelessWidget {
 
           decoration: const BoxDecoration(
 
-            color: Color(0xfffff1d5),
+            color: AppColors.lightGreen,
 
             shape: BoxShape.circle,
 

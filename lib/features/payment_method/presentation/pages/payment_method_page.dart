@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:quarbani_user_app/core/constants/theme/app_text_styles.dart';
 import '../../../../app/routes/routes_names.dart';
 import '../../../../core/Models/payment_model.dart';
+import '../../../../core/constants/theme/app_colors.dart';
 import '../widgets/payment_option_tile.dart';
 
 
@@ -52,7 +54,7 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
 
     return Scaffold(
 
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.white,
 
       body: SafeArea(
         child: Padding(
@@ -73,13 +75,9 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
                   child: Stack(
                     alignment: Alignment.center,
                     children: [
-                      const Text(
+                      Text(
                         "Payment Method",
-                        style: TextStyle(
-                          fontSize:16,
-                          fontWeight:FontWeight.w800,
-                          color:Colors.black,
-                        ),
+                       style: AppTextStyles.title,
                       ),
 
 
@@ -91,7 +89,7 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
                           },
                           icon: const Icon(
                             Icons.arrow_back,
-                            color: Colors.black,
+                            color: AppColors.black,
                           ),
 
                         ),
@@ -114,7 +112,7 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
                     borderRadius:
                     BorderRadius.circular(12),
                     border: Border.all(
-                      color:Colors.grey.shade300,
+                      color:AppColors.greyBorder,
 
                     ),
 
@@ -124,23 +122,16 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
 
                     mainAxisAlignment:
                     MainAxisAlignment.spaceBetween,
-                    children: const [
+                    children: [
 
-                      Text(
+                      const Text(
 
                         "Total Amount",
-                        style:TextStyle(
-                          fontSize:15,
-                          fontWeight:FontWeight.w800,
-                          color: const Color(0xff000000),
-                        ),
+                        style: AppTextStyles.smallTitle,
                       ),
                       Text(
                         "SAR 650",
-                        style:TextStyle(
-                          fontSize:16,
-                          fontWeight:FontWeight.w800,
-                        ),
+                        style: AppTextStyles.amount,
                       ),
                     ],
 
@@ -158,7 +149,7 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
                     borderRadius:
                     BorderRadius.circular(12),
                     border:Border.all(
-                      color:Colors.grey.shade500,
+                      color: AppColors.greyBorder,
 
                     ),
 
@@ -169,13 +160,9 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
                     crossAxisAlignment:
                     CrossAxisAlignment.start,
                     children: [
-                      const Text(
+                       Text(
                         "Recommended",
-                        style: TextStyle(
-                          fontSize:12,
-                          fontWeight: FontWeight.w600,
-                            color: Color(0xff1A1A1A),
-                        ),
+                         style: AppTextStyles.label,
                       ),
 
                       const SizedBox(height:8),
@@ -186,13 +173,9 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
 
                         children: [
 
-                          const Text(
+                           Text(
                             "Credit / Debit Card",
-                            style: TextStyle(
-                              fontSize:17,
-                              fontWeight:FontWeight.w900,
-                              color: Color(0xff000000),
-                            ),
+                             style: AppTextStyles.amount,
 
                           ),
 
@@ -229,44 +212,11 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
                 ),
 
 
-                // const SizedBox(height:12),
-                // paymentOption(
-                //   "Apple Pay",
-                //   "assets/images/apple.jpg",
-                // ),
-                // paymentOption(
-                //   "mada",
-                //   "assets/images/mada.jpg",
-                // ),
-                // paymentOption(
-                //   "STC Pay",
-                //   "assets/images/stc.jpg",
-                // ),
-                //
-                // paymentOption(
-                //   "PayPal",
-                //   "assets/images/Paypal.jpg",
-                // ),
-                // paymentOption(
-                //   "Bank Transfer",
-                //   "assets/images/banktransfer.jpg",
-                // ),
-
-                ...paymentMethods.map(
-
-                      (payment) {
-
-                    return paymentOption(
-
+                ...paymentMethods.map((payment) =>paymentOption(
                       payment.name,
-
                       payment.image,
 
-                    );
-
-                  },
-
-                ),
+                    )),
                 const SizedBox(height: 40,),
 
                 Row(
@@ -275,7 +225,7 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
 
                       value: isChecked,
 
-                      activeColor: const Color(0xff006B3F),
+                      activeColor: AppColors.successGreen,
 
                       onChanged: (value){
 
@@ -293,16 +243,11 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
 
                     RichText(
 
-                      text: const TextSpan(
+                      text:  TextSpan(
 
-                        style: TextStyle(
-
-                          fontSize: 13,
-
-                          fontWeight: FontWeight.w600,
-
-                          color: Colors.black,
-
+                        style: AppTextStyles.body.copyWith(
+                          // fontWeight: FontWeight.w600,
+                          color: AppColors.black,
                         ),
 
                         children: [
@@ -313,10 +258,8 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
 
                           TextSpan(
                             text: "Terms & Conditions",
-                            style: TextStyle(
-                              color: Color(0xff006B3F),
-                              fontWeight: FontWeight.w700,
-                            ),
+                            style:
+                              AppTextStyles.link,
                           ),
                         ],
                       ),
@@ -333,7 +276,7 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
 
                   child:ElevatedButton(
                     style:ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xff004D2C),
+                        backgroundColor: AppColors.green,
 
                       shape:
                       RoundedRectangleBorder(
@@ -352,12 +295,9 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
 
                       );
                     },
-                    child:const Text(
+                    child: Text(
                       "Pay SAR 650",
-                      style:TextStyle(
-                        color:Colors.white,
-                        fontWeight:FontWeight.bold,
-                      ),
+                      style: AppTextStyles.button,
                     ),
 
                   ),
