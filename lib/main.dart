@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'app/routes/app_routes.dart';
 import 'app/routes/routes_names.dart';
 import 'features/onboarding/presentation/bloc/onboarding_bloc.dart';
@@ -44,9 +43,15 @@ class MyApp extends StatelessWidget {
         // initialRoute: RouteNames.paymentMethod,
         // initialRoute: RouteNames.demo,
         onGenerateRoute: AppRouter.generateRoute,
+        // home: const LiveVideoLockedPage(),
       ),
+
     );
   }
+}
+
+class LiveVideoLockedPage {
+  const LiveVideoLockedPage();
 }
 
 

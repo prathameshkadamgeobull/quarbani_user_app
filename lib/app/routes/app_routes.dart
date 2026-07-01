@@ -18,7 +18,6 @@ import '../../features/order_summary/presentation/pages/order_summary_page.dart'
 import '../../features/payment_method/presentation/pages/payment_method_page.dart';
 import '../../features/payment_success/presentation/pages/payment_success_page.dart';
 import '../../features/qr_verification/bloc/qr_code_bloc.dart';
-import '../../features/qurbani/presentation/pages/select_date_page.dart';
 import '../../features/welcome/presentation/pages/welcome_page.dart';
 
 class AppRouter {
@@ -162,7 +161,7 @@ class AppRouter {
 
       case RouteNames.selectDatePage:
         return MaterialPageRoute(
-          builder: (_) => const SelectDatePage(),
+          builder: (_) => const DashboardPage(),
         );
 
 

@@ -5,7 +5,7 @@ class RouteNames {
   static const onboarding = '/onboarding';
   static const String dashboard = '/dashboard';
   static const login = '/login';
-  // static const String onboarding = '/onboarding';
+
 
   static const String aiChat = '/ai-chat';
   static const String animalSelection = "/animalSelection";
