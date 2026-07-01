@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
+import 'package:quarbani_user_app/features/live_tracking/bloc/live_tracking_bloc.dart';
+import 'features/live_tracking/presentation/pages/live_video_locked_page.dart';
 import 'app/routes/app_routes.dart';
 import 'app/routes/routes_names.dart';
 import 'features/onboarding/presentation/bloc/onboarding_bloc.dart';
@@ -32,26 +33,34 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (_) => QurbaniBloc(),
         ),
+        BlocProvider(
+          create: (_) => LiveTrackingBloc(),
+        ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         initialRoute: RouteNames.welcome,
         onGenerateRoute: AppRouter.generateRoute,
+        // home: const LiveVideoLockedPage(),
       ),
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-
-      // initialRoute: RouteNames.welcome,
-      // initialRoute: RouteNames.aiChat,
-      // initialRoute: RouteNames.animalSelection,
-      // initialRoute: RouteNames.animalDetails,
-      // initialRoute: RouteNames.orderSummary,
-      // initialRoute: RouteNames.paymentMethod,
-      initialRoute: RouteNames.demo,
-      onGenerateRoute:
-      AppRouter.generateRoute,
+    // return MaterialApp(
+    //   debugShowCheckedModeBanner: false,
+    //
+    //   // initialRoute: RouteNames.welcome,
+    //   // initialRoute: RouteNames.aiChat,
+    //   // initialRoute: RouteNames.animalSelection,
+    //   // initialRoute: RouteNames.animalDetails,
+    //   // initialRoute: RouteNames.orderSummary,
+    //   // initialRoute: RouteNames.paymentMethod,
+    //   // initialRoute: RouteNames.demo,
+    //   // onGenerateRoute:
+      // AppRouter.generateRoute,
     );
   }
+}
+
+class LiveVideoLockedPage {
+  const LiveVideoLockedPage();
 }
 
 
