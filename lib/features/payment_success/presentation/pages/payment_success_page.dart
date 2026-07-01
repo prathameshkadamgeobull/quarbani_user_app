@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
+import '../../../../app/routes/routes_names.dart';
 import '../../../../core/Models/payment_success_model.dart';
 import '../../../../core/constants/theme/app_colors.dart';
 import '../../../../core/constants/theme/app_text_styles.dart';
+
 
 
 class PaymentSuccessPage extends StatelessWidget {
@@ -24,7 +26,33 @@ class PaymentSuccessPage extends StatelessWidget {
 
       backgroundColor: AppColors.white,
 
-      body: SafeArea(
+        appBar: AppBar(
+
+
+          backgroundColor: AppColors.white,
+
+          elevation: 0,
+
+          leading: IconButton(
+
+            icon: const Icon(
+              Icons.arrow_back,
+              color: Colors.black,
+            ),
+
+            onPressed: (){
+
+              Navigator.pop(context);
+
+            },
+
+          ),
+
+        ),
+
+
+
+          body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(
             horizontal:20,
@@ -60,7 +88,7 @@ class PaymentSuccessPage extends StatelessWidget {
 
                Text(
                 "Payment Successful!",
-                  style: AppTextStyles.heading,
+                  style: AppTextStyles.successMessage,
               ),
 
               const SizedBox(height:15),
@@ -177,8 +205,30 @@ class PaymentSuccessPage extends StatelessWidget {
                     ),
 
                   ),
+                  onPressed:(){
 
-                  onPressed:(){},
+                    // Navigator.pushNamed(
+                    //
+                    //   context,
+                    //
+                    //   RouteNames.OrderTracking,
+                    //
+                    //   arguments: payment,
+                    //
+                    // );
+                    Navigator.pushNamed(
+                      context,
+                      RouteNames.OrderTracking,
+                      arguments: PaymentSuccessModel(
+                        orderId: "QB-2024-0001258",
+                        amount: 5000,
+                        status: "Payment Completed",
+
+                        message: "Your payment was successful",
+                      ),
+                    );
+
+                  },
                   child: const Text(
                     "View My Order",
                     style: AppTextStyles.button,

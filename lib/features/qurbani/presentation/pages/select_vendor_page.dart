@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../app/routes/routes_names.dart';
 import '../../bloc/qurbani_bloc.dart';
 import '../../bloc/qurbani_event.dart';
 import '../../bloc/qurbani_state.dart';
@@ -122,7 +123,11 @@ class _SelectVendorPageState extends State<SelectVendorPage> {
                   height: 55,
                   child: ElevatedButton(
                     onPressed: () {
-                      // TODO: Navigate to next page
+
+                      Navigator.pushNamed(
+                        context,
+                        RouteNames.orderSummary,
+                      );
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xff0B4A3A),

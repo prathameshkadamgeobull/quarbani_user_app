@@ -77,7 +77,7 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
                     children: [
                       Text(
                         "Payment Method",
-                       style: AppTextStyles.title,
+                       style: AppTextStyles.heading,
                       ),
 
 

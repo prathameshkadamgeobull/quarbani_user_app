@@ -1,6 +1,5 @@
 class PaymentMethodModel {
 
-
   final String name;
   final String image;
   final bool isSelected;
@@ -11,6 +10,7 @@ class PaymentMethodModel {
     required this.name,
     required this.image,
     this.isSelected = false,
+
 
   });
 
@@ -23,6 +23,7 @@ class PaymentMethodModel {
 
 
     return PaymentMethodModel(
+
 
       name: name,
 

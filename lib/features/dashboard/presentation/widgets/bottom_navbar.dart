@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../app/routes/routes_names.dart';
+
 class BottomNavbar extends StatefulWidget {
   const BottomNavbar({super.key});
 
@@ -80,6 +82,10 @@ class _BottomNavbarState extends State<BottomNavbar> {
             top: -5,
             child: GestureDetector(
               onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  RouteNames.aiChat,
+                );
 
               },
               child: Container(

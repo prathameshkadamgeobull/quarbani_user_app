@@ -5,7 +5,7 @@ class RouteNames {
   static const onboarding = '/onboarding';
   static const String dashboard = '/dashboard';
   static const login = '/login';
-  static const String onboarding = '/onboarding';
+  // static const String onboarding = '/onboarding';
 
   static const String aiChat = '/ai-chat';
   static const String animalSelection = "/animalSelection";
@@ -18,5 +18,12 @@ class RouteNames {
   static const String paymentSuccess = "/paymentSuccess";
 
   static const String QRVerification= "/QRVerification";
+
+  static const String OrderTracking ="/OrderTracking";
+
+  static const String animalAssigned="/animalAssigned";
+
+  static const String qrBarCodePage="/qrBarcodePage";
+  static const String selectDatePage="/selectDatePage";
 
 }

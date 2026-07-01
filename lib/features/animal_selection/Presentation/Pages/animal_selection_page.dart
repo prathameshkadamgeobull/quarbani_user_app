@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../app/routes/routes_names.dart';
 import '../../../../core/Models/animal_model.dart';
 
 
@@ -451,46 +452,95 @@ class AnimalDetailsSection extends StatelessWidget {
           //
           // ),
 
-          Row(
+          // Row(
+          //
+          //   mainAxisAlignment: MainAxisAlignment.spaceAround,
+          //
+          //   children: [
+          //
+          //     DetailInfoCard(
+          //
+          //       icon: Icons.person_outline,
+          //
+          //       title: "Age",
+          //
+          //       value: animal.age,
+          //
+          //     ),
+          //
+          //
+          //     DetailInfoCard(
+          //
+          //       icon: Icons.monitor_weight_outlined,
+          //
+          //       title: "Weight",
+          //
+          //       value: animal.weight,
+          //
+          //     ),
+          //
+          //
+          //     DetailInfoCard(
+          //
+          //       icon: Icons.pets,
+          //
+          //       title: "Type",
+          //
+          //       value: animal.type,
+          //
+          //     ),
+          //
+          //   ],
+          //
+          // ),
 
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-
-            children: [
-
-              DetailInfoCard(
-
-                icon: Icons.person_outline,
-
-                title: "Age",
-
-                value: animal.age,
-
+          Container(
+            padding: const EdgeInsets.symmetric(
+              vertical: 14,
+              horizontal: 12,
+            ),
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: AppColors.greyBorder,
               ),
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
 
+                Column(
+                  children: [
+                    const Icon(Icons.person_outline),
+                    const SizedBox(height: 4),
+                    Text("Age", style: AppTextStyles.body),
+                    const SizedBox(height: 2),
+                    Text(animal.age, style: AppTextStyles.label),
+                  ],
+                ),
 
-              DetailInfoCard(
+                Column(
+                  children: [
+                    const Icon(Icons.monitor_weight_outlined),
+                    const SizedBox(height: 4),
+                    Text("Weight", style: AppTextStyles.body),
+                    const SizedBox(height: 2),
+                    Text(animal.weight, style: AppTextStyles.label),
+                  ],
+                ),
 
-                icon: Icons.monitor_weight_outlined,
+                Column(
+                  children: [
+                    const Icon(Icons.pets),
+                    const SizedBox(height: 4),
+                    Text("Type", style: AppTextStyles.body),
+                    const SizedBox(height: 2),
+                    Text(animal.type, style: AppTextStyles.label),
+                  ],
+                ),
 
-                title: "Weight",
-
-                value: animal.weight,
-
-              ),
-
-
-              DetailInfoCard(
-
-                icon: Icons.pets,
-
-                title: "Type",
-
-                value: animal.type,
-
-              ),
-
-            ],
-
+              ],
+            ),
           ),
 
 
@@ -515,6 +565,44 @@ class AnimalDetailsSection extends StatelessWidget {
           buildPoint("Hygienic Slaughter"),
 
           buildPoint("Fair Distribution"),
+
+
+          const SizedBox(height:20),
+
+
+          SizedBox(
+            width: double.infinity,
+            height:45,
+
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+
+                backgroundColor: AppColors.green,
+
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+
+              ),
+
+              onPressed:(){
+                Navigator.pushNamed(
+                  context,
+                  RouteNames.selectDatePage,
+                );
+
+
+                // print("Selected Animal: ${animal.name}");
+
+              },
+
+              child: Text(
+                "Select This Animal",
+                style: AppTextStyles.button,
+              ),
+
+            ),
+          ),
 
 
         ],
@@ -566,6 +654,39 @@ class AnimalDetailsSection extends StatelessWidget {
 
     );
 
+  }
+
+  Widget _infoItem(IconData icon, String title, String value) {
+    return Column(
+      children: [
+
+        Icon(
+          icon,
+          size: 20,
+          color: Colors.green,
+        ),
+
+        const SizedBox(height: 6),
+
+        Text(
+          title,
+          style: const TextStyle(
+            fontSize: 12,
+            color: Colors.grey,
+          ),
+        ),
+
+        const SizedBox(height: 2),
+
+        Text(
+          value,
+          style: const TextStyle(
+            fontSize: 13,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ],
+    );
   }
 
 }

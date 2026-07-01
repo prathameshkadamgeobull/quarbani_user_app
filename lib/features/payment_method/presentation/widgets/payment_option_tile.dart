@@ -32,7 +32,7 @@ Widget paymentOption(
         Text(
           title,
           style: AppTextStyles.smallTitle.copyWith(
-            fontSize: 15, // keep exact original UI size
+            fontSize: 19, // keep exact original UI size
           ),
         ),
 

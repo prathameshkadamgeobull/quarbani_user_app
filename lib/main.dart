@@ -36,20 +36,15 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         initialRoute: RouteNames.welcome,
+        // initialRoute: RouteNames.welcome,
+        // initialRoute: RouteNames.aiChat,
+        // initialRoute: RouteNames.animalSelection,
+        // initialRoute: RouteNames.animalDetails,
+        // initialRoute: RouteNames.orderSummary,
+        // initialRoute: RouteNames.paymentMethod,
+        // initialRoute: RouteNames.demo,
         onGenerateRoute: AppRouter.generateRoute,
       ),
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-
-      // initialRoute: RouteNames.welcome,
-      // initialRoute: RouteNames.aiChat,
-      // initialRoute: RouteNames.animalSelection,
-      // initialRoute: RouteNames.animalDetails,
-      // initialRoute: RouteNames.orderSummary,
-      // initialRoute: RouteNames.paymentMethod,
-      initialRoute: RouteNames.demo,
-      onGenerateRoute:
-      AppRouter.generateRoute,
     );
   }
 }

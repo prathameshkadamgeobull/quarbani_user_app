@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quarbani_user_app/app/routes/routes_names.dart';
+import 'package:quarbani_user_app/features/order_tracking/presentation/pages/order_tracking_page.dart';
+import 'package:quarbani_user_app/features/qr_verification/presentation/pages/qr_barcode_page.dart';
 import '../../core/Models/animal_model.dart';
 import '../../core/Models/order_model.dart';
 import '../../core/Models/payment_success_model.dart';
 import '../../features/AI_Chat/Bloc/ai_chat_bloc.dart';
 import '../../features/AI_Chat/View/ai_chat_page.dart';
 import '../../features/Demo/presentation/pages/demo_home_page.dart';
+import '../../features/animal_assigned/presentation/pages/animal_assigned_page.dart';
 import '../../features/animal_selection/Presentation/Pages/animal_details_page.dart';
 import '../../features/animal_selection/Presentation/Pages/animal_selection_page.dart';
 import '../../features/dashboard/presentation/pages/dashboard_page.dart';
@@ -14,7 +17,8 @@ import '../../features/onboarding/presentation/pages/onboarding_page.dart';
 import '../../features/order_summary/presentation/pages/order_summary_page.dart';
 import '../../features/payment_method/presentation/pages/payment_method_page.dart';
 import '../../features/payment_success/presentation/pages/payment_success_page.dart';
-import '../../features/qr_verification/presentation/pages/qr_verification_page.dart';
+import '../../features/qr_verification/bloc/qr_code_bloc.dart';
+import '../../features/qurbani/presentation/pages/select_date_page.dart';
 import '../../features/welcome/presentation/pages/welcome_page.dart';
 
 class AppRouter {
@@ -45,27 +49,21 @@ class AppRouter {
       case RouteNames.animalDetails:
 
         return MaterialPageRoute(
-
           builder: (_) =>  AnimalDetailsPage(
             animal: settings.arguments as AnimalModel,
           ),
 
         );
 
-      // case RouteNames.orderSummary:
-      //     return MaterialPageRoute(
-      //
-      //     builder:(_) => OrderSummaryPage(),
-      //
-      //   );
-
-      case RouteNames.orderSummary:
-
       case RouteNames.dashboard:
         return MaterialPageRoute(
           builder: (_) => const DashboardPage(),
+        );
 
-          builder:(_) => OrderSummaryPage(
+
+      case RouteNames.orderSummary:
+        return MaterialPageRoute(
+          builder: (_) => OrderSummaryPage(
 
             order: OrderSummaryModel(
 
@@ -84,8 +82,9 @@ class AppRouter {
             ),
 
           ),
-
         );
+
+
 
       case RouteNames.paymentMethod:
         return MaterialPageRoute(
@@ -101,41 +100,70 @@ class AppRouter {
           builder: (_) => const DemoHomePage(),
 
         );
-      //
-      // case RouteNames.paymentSuccess:
-      //
-      //   return MaterialPageRoute(
-      //
-      //     builder: (_) => const PaymentSuccessPage(),
-      //
-      //   );
 
       case RouteNames.paymentSuccess:
+
+        final payment = PaymentSuccessModel(
+
+          orderId: "QB-2024-0001258",
+
+          amount: 650,
+
+          status: "success",
+
+          message: "Payment Successful",
+
+        );
+
 
         return MaterialPageRoute(
 
           builder: (_) => PaymentSuccessPage(
 
-            payment: PaymentSuccessModel(
-
-              orderId: "QB-2024-0001258",
-
-              amount: 650,
-
-              status: "success",
-
-              message: "Payment Successful",
-
-            ),
+            payment: payment,
 
           ),
 
         );
 
-      case RouteNames.QRVerification :
-         return MaterialPageRoute(
-       builder: (_) => const QRVerificationPage(),
-    );
+      case RouteNames.OrderTracking:
+
+        return MaterialPageRoute(
+
+          builder: (_) => const OrderTrackingPage(),
+
+          settings: RouteSettings(
+            arguments: settings.arguments,
+          ),
+
+        );
+
+
+      case RouteNames.animalAssigned:
+
+        return MaterialPageRoute(
+
+          builder: (_) => const AnimalAssignedPage(),
+
+          settings: settings,
+
+        );
+      case RouteNames.qrBarCodePage:
+
+        return MaterialPageRoute(
+
+          builder: (_) => const QrBarcodePage(),
+
+          settings: RouteSettings(
+            arguments: settings.arguments,
+          ),
+
+        );
+
+      case RouteNames.selectDatePage:
+        return MaterialPageRoute(
+          builder: (_) => const SelectDatePage(),
+        );
 
 
 

@@ -7,7 +7,7 @@ class AppTextStyles {
 
   static const heading = TextStyle(
     fontFamily: "Inter",
-    fontSize: 24,
+    fontSize: 26,
     fontWeight: FontWeight.w700,
     color: AppColors.primary,
   );
@@ -15,7 +15,7 @@ class AppTextStyles {
 
   static const title = TextStyle(
     fontFamily: "Inter",
-    fontSize: 18,
+    fontSize: 21,
     fontWeight: FontWeight.w600,
     color: AppColors.lightBlack,
   );
@@ -23,7 +23,7 @@ class AppTextStyles {
 
   static const body = TextStyle(
     fontFamily: "Inter",
-    fontSize: 14,
+    fontSize: 18,
     fontWeight: FontWeight.w400,
     color: AppColors.grey,
   );
@@ -31,14 +31,14 @@ class AppTextStyles {
 
   static const button = TextStyle(
     fontFamily: "Inter",
-    fontSize: 15,
+    fontSize: 18,
     fontWeight: FontWeight.w600,
     color: AppColors.white,
   );
 
   static const smallTitle = TextStyle(
     fontFamily: "Inter",
-    fontSize: 15,
+    fontSize: 21,
     fontWeight: FontWeight.w700,
     color: AppColors.black,
   );
@@ -46,30 +46,42 @@ class AppTextStyles {
 
   static const amount = TextStyle(
     fontFamily: "Inter",
-    fontSize: 18,
-    fontWeight: FontWeight.w900,
+    fontSize: 16,
+    fontWeight: FontWeight.w400,
     color: AppColors.black,
   );
 
   static const successMessage = TextStyle(
     fontFamily: "Inter",
-    fontSize: 19,
+    fontSize: 16,
     fontWeight: FontWeight.w800,
     color: AppColors.black,
   );
 
   static const link = TextStyle(
     fontFamily: "Inter",
-    fontSize: 15,
+    fontSize: 18,
     fontWeight: FontWeight.w700,
     color: AppColors.successGreen,
   );
 
   static const label = TextStyle(
     fontFamily: "Inter",
-    fontSize: 12,
+    fontSize: 18,
     fontWeight: FontWeight.w600,
     color: AppColors.black,
+  );
+
+  static const trackingDate = TextStyle(
+
+    fontFamily:"Inter",
+
+    fontSize:13,
+
+    fontWeight:FontWeight.w700,
+
+    color:AppColors.black,
+
   );
 
 }

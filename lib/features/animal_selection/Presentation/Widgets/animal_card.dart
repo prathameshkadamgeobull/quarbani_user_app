@@ -63,7 +63,7 @@ class AnimalCard extends StatelessWidget {
     // return Container(
 
 
-      height:72,
+      height:120,
 
 
       margin: const EdgeInsets.only(
@@ -104,9 +104,9 @@ class AnimalCard extends StatelessWidget {
 
               animal.image,
 
-              height:58,
+              height:85,
 
-              width:58,
+              width:85,
 
               fit:BoxFit.cover,
 

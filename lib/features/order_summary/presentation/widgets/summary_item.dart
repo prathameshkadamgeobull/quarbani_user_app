@@ -120,7 +120,7 @@ Widget summaryItem(
                 value,
                 style: AppTextStyles.body.copyWith(
                   color: AppColors.black,
-                  fontWeight: FontWeight.w600,
+                  fontWeight: FontWeight.w400,
                 ),
               ),
             ],
